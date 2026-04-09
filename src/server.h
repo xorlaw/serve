@@ -28,7 +28,7 @@ int create_server_socket(void) {
 
     struct sockaddr_in address;
     address.sin_family = AF_INET;
-    address.sin_addr.s_addr = hotnl(INADDR_LOOPBACK); 
+    address.sin_addr.s_addr = htonl(INADDR_LOOPBACK); 
     address.sin_port = htons(PORT);
 
     if (bind(server_fd, (struct sockaddr *)&address, sizeof(address)) < 0) {
